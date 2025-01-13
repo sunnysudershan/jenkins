@@ -22,7 +22,7 @@ pipeline {
         repository: "registry.aus.edu/demo-2/my-app",
         scanLayers: true, 
         tag: "2.0",
-        controllerEndpointUrlSelection: "http://neuvector-svc-controller:18300"
+        controllerEndpointUrlSelection: "https://neuvector.aus.edu/"
       }  
     }
     stage('Build') { 
