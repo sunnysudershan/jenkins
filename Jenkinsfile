@@ -18,7 +18,7 @@ pipeline {
         nameOfVulnerabilityToFailTwo: '', 
         numberOfHighSeverityToFail: '400', 
         numberOfMediumSeverityToFail: '400', 
-        controllerEndpointUrlSelection: 'http://neuvector-svc-controller:18300',
+        controllerEndpointUrlSelection: 'https://neuvector.aus.edu',
         registrySelection: 'rmt',
         repository: "registry.aus.edu/demo-2/my-app",
         scanLayers: true, 
