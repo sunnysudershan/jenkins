@@ -21,7 +21,8 @@ pipeline {
         registrySelection: 'rmt',
         repository: "registry.aus.edu/demo-2/my-app",
         scanLayers: true, 
-        tag: "2.0"
+        tag: "2.0",
+        controllerEndpointUrl: "http://neuvector-controller:8080"
       }  
     }
     stage('Build') { 
