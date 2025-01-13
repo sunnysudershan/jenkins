@@ -19,9 +19,9 @@ pipeline {
         numberOfHighSeverityToFail: '400', 
         numberOfMediumSeverityToFail: '400', 
         registrySelection: 'rmt',
-        repository: "registry.suse.com/bci/bci-base",
+        repository: "registry.aus.edu/demo-2/my-app",
         scanLayers: true, 
-        tag: "15.6"
+        tag: "2.0"
       }  
     }
     stage('Build') { 
