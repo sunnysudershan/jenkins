@@ -20,9 +20,9 @@ pipeline {
         numberOfMediumSeverityToFail: '400',
         controllerEndpointUrlSelection: 'NeuVector-Controller-1',
         registrySelection: 'rmt',
-        repository: "registry.suse.com/bci/bci-base",
+        repository: "registry.aus.edu/demo-2/my-app",
         scanLayers: true, 
-        tag: "15.4"
+        tag: "1.0"
       }  
     }
     stage('Build') { 
