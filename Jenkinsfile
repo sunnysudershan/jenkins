@@ -21,7 +21,7 @@ pipeline {
           numberOfMediumSeverityToFail: '20', // Set appropriate threshold
           controllerEndpointUrlSelection: 'NeuVector-Controller-1',
           registrySelection: 'rmt', 
-          repository: 'registry.aus.edu/demo-2/my-app:1.0', 
+          repository: 'registaary.aus.edu/demo-2/my-app', 
           scanLayers: true, 
           scanTimeout: 10, 
           tag: '1.0'
