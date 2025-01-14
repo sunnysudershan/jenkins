@@ -35,7 +35,7 @@ pipeline {
                             numberOfHighSeverityToFail: '0',
                             numberOfMediumSeverityToFail: '0',
                             controllerEndpointUrlSelection: 'NeuVector-Controller-1',
-                            registrySelection: 'rtm',
+                            registrySelection: 'rmt',
                             repository: 'quay.io/quarkus/quarkus-distroless-image',
                             scanTimeout: 10,
                             standaloneScanner: true,
