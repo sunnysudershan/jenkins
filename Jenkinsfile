@@ -39,7 +39,7 @@ pipeline {
                             repository: 'demo-2/my-app',  // Your application repository remains unchanged
                             scanTimeout: 10,
                             standaloneScanner: true,
-                            tag: 'latest',
+                            tag: '1.0',
                             scannerImage: 'registry.aus.edu/neuvector/scanner:latest'  // Pull NeuVector scanner from your local registry
                         )
                     }
