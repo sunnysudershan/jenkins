@@ -1,5 +1,24 @@
 pipeline {
-    agent any
+    agent {
+      kubernetes {
+        yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+          containers:
+          - name: docker
+            image: docker:dind
+            command: ["/bin/sh", "-c"]
+            args: ["dockerd & sleep infinity"]
+            securityContext:
+              privileged: true
+              runAsUser: 0
+          imagePullSecrets:
+            - name: my-dockerhub-secret
+        '''
+      }
+    }
+
     stages {
         stage('Pre Scan') { 
             steps {
