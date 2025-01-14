@@ -11,7 +11,7 @@ pipeline {
         script {
           try {
             // Try to pull the image from the registry
-            sh 'podman pull registry.aus.edu/demo-2/my-app:1.0'
+            sh 'docker pull registry.aus.edu/demo-2/my-app:1.0'
             echo 'Image successfully pulled!'
           } catch (Exception e) {
             echo 'Failed to pull the image!'
