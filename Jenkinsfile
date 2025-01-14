@@ -36,10 +36,10 @@ pipeline {
                             numberOfMediumSeverityToFail: '0',
                             controllerEndpointUrlSelection: 'NeuVector-Controller-1',
                             registrySelection: 'rmt',
-                            repository: 'quay.io/quarkus/quarkus-distroless-image',
+                            repository: 'demo-2/my-app',
                             scanTimeout: 10,
                             standaloneScanner: true,
-                            tag: '2.0'
+                            tag: '1.0'
                         )
                     }
                 }
