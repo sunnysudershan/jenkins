@@ -14,7 +14,7 @@ pipeline {
               privileged: true
               runAsUser: 0
           imagePullSecrets:
-            - name: my-dockerhub-secret  // Change this to your local registry secret if needed
+            - name: my-dockerhub-secret
         '''
       }
     }
@@ -36,11 +36,10 @@ pipeline {
                             numberOfMediumSeverityToFail: '0',
                             controllerEndpointUrlSelection: 'NeuVector-Controller-1',
                             registrySelection: 'rmt',
-                            repository: 'demo-2/my-app',  // Your application repository remains unchanged
+                            repository: 'demo-2/my-app',
                             scanTimeout: 10,
                             standaloneScanner: true,
-                            tag: '1.0',
-                            scannerImage: 'registry.aus.edu/neuvector/scanner:latest'  // Pull NeuVector scanner from your local registry
+                            tag: '1.0'
                         )
                     }
                 }
