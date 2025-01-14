@@ -43,6 +43,8 @@ pipeline {
                             registrySelection: 'rmt',
                             repository: 'demo-2/my-app',
                             scanTimeout: 10,
+                            standaloneScanner: true,
+			                scanLayers: true,
                             tag: '1.0'
                         )
                     }
