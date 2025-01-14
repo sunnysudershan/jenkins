@@ -19,6 +19,7 @@ pipeline {
           nameOfVulnerabilityToFailTwo: '', 
           numberOfHighSeverityToFail: '10', // Set appropriate threshold
           numberOfMediumSeverityToFail: '20', // Set appropriate threshold
+          controllerEndpointUrlSelection: 'NeuVector-Controller-1',
           registrySelection: 'rmt', 
           repository: 'registry.aus.edu/demo-2/my-app:1.0', 
           scanLayers: true, 
