@@ -6,12 +6,10 @@ pipeline {
         echo 'Pre Scan commands ...'
       }
     }
-      }
-    }
     stage('Image Scan') { 
       steps {
         neuvector(
-          nameOfVulnerabilityToExemptFour: '',
+          nameOfVulnerabilityToExemptFour: '', 
           nameOfVulnerabilityToExemptOne: '', 
           nameOfVulnerabilityToExemptThree: '', 
           nameOfVulnerabilityToExemptTwo: '', 
@@ -19,13 +17,13 @@ pipeline {
           nameOfVulnerabilityToFailOne: '', 
           nameOfVulnerabilityToFailThree: '', 
           nameOfVulnerabilityToFailTwo: '', 
-          numberOfHighSeverityToFail: '', 
-          numberOfMediumSeverityToFail: '', 
+          numberOfHighSeverityToFail: '10', // Set appropriate threshold
+          numberOfMediumSeverityToFail: '20', // Set appropriate threshold
           registrySelection: 'rmt', 
           repository: 'registry.aus.edu/demo-2/my-app:1.0', 
           scanLayers: true, 
           scanTimeout: 10, 
-          tag: 'latest'
+          tag: '1.0'
         )
       }
     }
@@ -48,6 +46,6 @@ pipeline {
       steps {
         echo 'Release commands ...'
       }
-    }    
+    }
   }
 }
