@@ -34,7 +34,7 @@ pipeline {
           numberOfHighSeverityToFail: '', 
           numberOfMediumSeverityToFail: '', 
           registrySelection: 'rmt', 
-          repository: 'demo-2/my-app:1.0', 
+          repository: 'registry.aus.edu/demo-2/my-app:1.0', 
           scanLayers: true, 
           scanTimeout: 10, 
           tag: 'latest'
