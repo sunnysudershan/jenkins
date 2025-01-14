@@ -6,25 +6,40 @@ pipeline {
         echo 'Pre Scan commands ...'
       }
     }
+    stage('Check Image Pull') {
+      steps {
+        script {
+          try {
+            // Try to pull the image from the registry
+            sh 'podman pull registry.aus.edu/demo-2/my-app:1.0'
+            echo 'Image successfully pulled!'
+          } catch (Exception e) {
+            echo 'Failed to pull the image!'
+            error 'Image pull failed. Exiting pipeline.'
+          }
+        }
+      }
+    }
     stage('Image Scan') { 
       steps {
-        neuvector controllerEndpointUrlSelection: 'NeuVector-Controller-1',
-                 nameOfVulnerabilityToExemptFour: '', 
-                 nameOfVulnerabilityToExemptOne: '', 
-                 nameOfVulnerabilityToExemptThree: '', 
-                 nameOfVulnerabilityToExemptTwo: '', 
-                 nameOfVulnerabilityToFailFour: '', 
-                 nameOfVulnerabilityToFailOne: '', 
-                 nameOfVulnerabilityToFailThree: '', 
-                 nameOfVulnerabilityToFailTwo: '', 
-                 numberOfHighSeverityToFail: '', 
-                 numberOfMediumSeverityToFail: '', 
-                 registrySelection: 'rmt', 
-                 repository: 'demo-2/my-app:1.0', 
-                 scanLayers: true, 
-                 scanTimeout: 10, 
-                 tag: 'latest'
-      }  
+        neuvector(
+          nameOfVulnerabilityToExemptFour: '',
+          nameOfVulnerabilityToExemptOne: '', 
+          nameOfVulnerabilityToExemptThree: '', 
+          nameOfVulnerabilityToExemptTwo: '', 
+          nameOfVulnerabilityToFailFour: '', 
+          nameOfVulnerabilityToFailOne: '', 
+          nameOfVulnerabilityToFailThree: '', 
+          nameOfVulnerabilityToFailTwo: '', 
+          numberOfHighSeverityToFail: '', 
+          numberOfMediumSeverityToFail: '', 
+          registrySelection: 'rmt', 
+          repository: 'demo-2/my-app:1.0', 
+          scanLayers: true, 
+          scanTimeout: 10, 
+          tag: 'latest'
+        )
+      }
     }
     stage('Build') { 
       steps {
