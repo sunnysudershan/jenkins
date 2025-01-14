@@ -24,8 +24,7 @@ pipeline {
                 echo 'Pre Scan commands ...'
             }
         }
-        
-        stage('docker pull') {
+        stage('Image Scan') {
             steps {
                 container('docker') {
                     script {
@@ -44,7 +43,6 @@ pipeline {
                             registrySelection: 'rmt',
                             repository: 'demo-2/my-app',
                             scanTimeout: 10,
-                            standaloneScanner: true,
                             tag: '1.0'
                         )
                     }
